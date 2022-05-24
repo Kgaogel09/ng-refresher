@@ -1,0 +1,5 @@
+<form>
+  <label for="name">Name</label>
+  <input type="text" id="name" #personEl />
+  <button (click)="onCreate(personEl.value)">Create</button>
+</form>

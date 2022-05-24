@@ -1,3 +1,5 @@
 <ol>
-  <li *ngFor="let person of personList">{{ person }}</li>
+  <li (click)="onRemovePerson(person)" *ngFor="let person of personList">
+    {{ person }}
+  </li>
 </ol>

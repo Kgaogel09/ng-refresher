@@ -1,4 +1,7 @@
-<ol>
+<div *ngIf="isLoading" class="container">
+  <div class="loader"></div>
+</div>
+<ol *ngIf="!isLoading">
   <li (click)="onRemovePerson(person)" *ngFor="let person of personList">
     {{ person }}
   </li>

@@ -13,16 +13,19 @@ export class PersonComponent implements OnInit, OnDestroy {
   // using services
   personList: string[];
   private personListSub: Subscription;
+  isLoading = true;
 
   constructor(private prsService: PersonService) {
     // this.personService = prsService;
   }
 
   ngOnInit() {
-    this.personList = this.prsService.persons;
     this.personListSub = this.prsService.updatedPerson.subscribe((persons) => {
       this.personList = persons;
+      this.isLoading = false;
     });
+    this.isLoading = true;
+    this.prsService.fetchData();
   }
 
   onRemovePerson(personName: string) {

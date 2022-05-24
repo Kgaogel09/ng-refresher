@@ -6,4 +6,16 @@ ul {
 li {
   display: inline;
   margin-left: 10px;
+  a {
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 2px 8px;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
 }
